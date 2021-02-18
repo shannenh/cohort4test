@@ -24,12 +24,13 @@ namespace Assets.Code
         ConnectedWaypoint currentWaypoint;
         ConnectedWaypoint previousWaypoint;
 
+        float playerPosition;
         int waypointsVisited;
         bool travelling;
         bool waiting;
         bool patrolForward;
         float waitTimer;
-
+               
         //called at start
         public void Start()
         {
@@ -112,7 +113,7 @@ namespace Assets.Code
         }
 
         private void SetDestination()
-        {
+        {           
             if (waypointsVisited > 0)
             {
                 ConnectedWaypoint nextWaypoint = currentWaypoint.NextWaypoint(previousWaypoint);
